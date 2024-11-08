@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import  { useEffect, useState } from 'react';
 import './Home.scss';
 import axios from 'axios';
 import banner from './image/banner.jpg';
@@ -9,7 +11,7 @@ const url = "https://api.themoviedb.org/3";
 const upcoming = "upcoming";
 
 
-const Card = ({ img }) => (
+const Card = (img: any) => (
   <img
     src={`https://image.tmdb.org/t/p/w500${img}`} 
     alt="cover"
@@ -18,12 +20,15 @@ const Card = ({ img }) => (
 );
 
 
-const Row = ({ title, arr = [] }) => (
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Row = ( title:any,  arr = [] ) => (
   <div className="row">
     <h2>{title}</h2>
     <div>
       {arr.map((item, index) => (
+        //@ts-ignore
         <Card key={index} img={item.poster_path} />
+        
       ))}
     </div>
   </div>

@@ -1,4 +1,3 @@
-import React from 'react'
 import Logo from './image/Logonetflix.png';
 import {Link} from 'react-router-dom'
 import { GrSearch } from "react-icons/gr";
